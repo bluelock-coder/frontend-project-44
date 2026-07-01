@@ -1,7 +1,9 @@
+// src/gameEven.js
 import readlineSync from 'readline-sync';
 import { isEven } from './even.js';
 
 const ROUNDS_COUNT = 3;
+
 const getRandomNumber = () => Math.floor(Math.random() * 100) + 1;
 
 export const runGame = (name) => {
@@ -11,8 +13,10 @@ export const runGame = (name) => {
     const number = getRandomNumber();
     console.log(`Question: ${number}`);
     const userAnswer = readlineSync.question('Your answer: ');
+
     const correctAnswer = isEven(number) ? 'yes' : 'no';
 
+    // Любой ввод кроме 'yes' и 'no' — ошибка
     if (userAnswer !== 'yes' && userAnswer !== 'no') {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${name}!`);
