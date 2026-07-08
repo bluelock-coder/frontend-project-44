@@ -9,3 +9,5 @@ https://sonarcloud.io/images/project_badges/sonarcloud-light.svg
 - [Пример поражения (calc)](https://asciinema.org/a/NUJ3E42BAm3Xmt4N)
 - [Пример победы (gcd)](https://asciinema.org/a/6KHlTqgA9EO2Q7b9)
 - [Пример поражения (gcd)](https://asciinema.org/a/aQBlRITxvQ2ubxhq)
+- [Пример победы (asciicast)](https://asciinema.org/a/8l6buFp9UEZvclL4)
+- [Пример поражения (asciicast)](https://asciinema.org/a/daBD7L3utqY39cEu)

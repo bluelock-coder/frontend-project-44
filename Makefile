@@ -14,3 +14,5 @@ brain-games:
 
 publish:
 	npm publish --dry-run
+progression:
+	node bin/brain-progression.js
