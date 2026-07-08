@@ -11,3 +11,5 @@ https://sonarcloud.io/images/project_badges/sonarcloud-light.svg
 - [Пример поражения (gcd)](https://asciinema.org/a/aQBlRITxvQ2ubxhq)
 - [Пример победы (asciicast)](https://asciinema.org/a/8l6buFp9UEZvclL4)
 - [Пример поражения (asciicast)](https://asciinema.org/a/daBD7L3utqY39cEu)
+- [Пример победы (prime)](https://asciinema.org/a/KvgpWdoOnlVaowMW)
+- [Пример поражения (prime)](https://asciinema.org/a/l5yE4oDtnEpciopT)
