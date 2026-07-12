@@ -22,7 +22,7 @@ even:
 	@node bin/brain-even.js
 
 brain-games:
-	@echo "Use specific commands: make calc, make even, make gcd, make prime, make progression"
+	@node bin/brain-games.js
 
 publish:
 	@npm publish --dry-run
