@@ -3,14 +3,19 @@ import getRandomInt from '../utils.js';
 
 const OPERATIONS = ['+', '-', '*'];
 
-const getOperation = () => OPERATIONS[getRandomInt(0, OPERATIONS.length)];
+const getOperation = () => OPERATIONS[getRandomInt(0, OPERATIONS.length - 1)];
 
 const calculate = (a, b, op) => {
   switch (op) {
     case '+':
       return a + b;
     case '-':
-      return a - b;
+      // Гарантируем неотрицательный результат
+      if (a >= b) {
+        return a - b;
+      }
+      // Если a < b, меняем местами
+      return b - a;
     case '*':
       return a * b;
     default:
@@ -22,9 +27,22 @@ const generateRound = () => {
   const a = getRandomInt(1, 100);
   const b = getRandomInt(1, 100);
   const op = getOperation();
-  const question = `${a} ${op} ${b}`;
+
+  // Для минуса — подстраиваем вопрос под результат, чтобы он был неотрицательным
+  let question;
+  if (op === '-') {
+    if (a >= b) {
+      question = `${a} ${op} ${b}`;
+    } else {
+      // Меняем местами в вопросе, чтобы не было минуса в ответе
+      question = `${b} ${op} ${a}`;
+    }
+  } else {
+    question = `${a} ${op} ${b}`;
+  }
+
   const correctAnswer = String(calculate(a, b, op));
-  return { question, correctAnswer };
+  return { question, answer: correctAnswer };
 };
 
 export default generateRound;

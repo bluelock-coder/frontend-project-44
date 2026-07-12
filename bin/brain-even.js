@@ -1,11 +1,8 @@
 #!/usr/bin/env node
-import cli from '../src/cli.js';
-import { runGame } from '../src/gameEven.js';
 
-const start = () => {
-  const name = cli();
-  console.log('Welcome to the Brain Games!');
-  runGame(name);
-};
+import runGame from '../src/index.js';
+import generateRound from '../src/games/even.js';
 
-start();
+const DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+runGame(DESCRIPTION, generateRound);

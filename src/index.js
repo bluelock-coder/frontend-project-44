@@ -1,31 +1,32 @@
 // src/index.js
 import readlineSync from 'readline-sync';
 
-export const ROUNDS_COUNT = 3;
-
-/**
- * Запускает игру.
- * @param {string} description — описание игры (выводится после приветствия).
- * @param {Function} getRoundData — функция, которая возвращает { question, correctAnswer }.
- */
-export default (description, getRoundData) => {
+const runGame = (description, generateRound) => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
-  console.log(description);
+  console.log(`Hello, ${name}!\n${description}\n`);
 
-  for (let i = 0; i < ROUNDS_COUNT; i += 1) {
-    const { question, correctAnswer } = getRoundData();
+  const rounds = 3;
+  let round = 0;
+
+  while (round < rounds) {
+    const { question, answer } = generateRound();
     console.log(`Question: ${question}`);
-    const userAnswer = readlineSync.question('Your answer: ');
+    const userAnswer = readlineSync.question('Your answer: ').trim();
 
-    if (userAnswer !== correctAnswer) {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+    if (userAnswer === answer) {
+      console.log('Correct!');
+      round += 1;
+    } else {
+      console.log(
+        `'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`
+      );
       console.log(`Let's try again, ${name}!`);
       return;
     }
-    console.log('Correct!');
   }
 
   console.log(`Congratulations, ${name}!`);
 };
+
+export default runGame;
