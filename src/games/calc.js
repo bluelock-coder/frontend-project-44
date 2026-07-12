@@ -28,13 +28,13 @@ const generateRound = () => {
   const b = getRandomInt(1, 100);
   const op = getOperation();
 
-  // Для минуса — подстраиваем вопрос под результат, чтобы он был неотрицательным
+  
   let question;
   if (op === '-') {
     if (a >= b) {
       question = `${a} ${op} ${b}`;
     } else {
-      // Меняем местами в вопросе, чтобы не было минуса в ответе
+      
       question = `${b} ${op} ${a}`;
     }
   } else {
