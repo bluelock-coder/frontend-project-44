@@ -1,28 +1,19 @@
-.PHONY: install lint calc gcd prime progression even brain-games publish
+.PHONY: install lint calc gcd prime progression even publish
 
 install:
-	@npm ci
-
-lint:
-	@npx eslint .
+	npm ci
 
 calc:
 	@node bin/brain-calc.js
 
-gcd:
-	@node bin/brain-gcd.js
-
 prime:
 	@node bin/brain-prime.js
-
-progression:
-	@node bin/brain-progression.js
 
 even:
 	@node bin/brain-even.js
 
-brain-games:
-	@node bin/brain-games.js
+gcd:
+	@node bin/brain-gcd.js
 
-publish:
-	@npm publish --dry-run
+progression:
+	@node bin/brain-progression.js

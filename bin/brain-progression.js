@@ -2,6 +2,6 @@
 import runGame from '../src/index.js';
 import generateRound from '../src/games/progression.js';
 
-const DESCRIPTION = 'What number is missing in the progression?';
+const gameDescription = 'What number is missing in this progression?';
 
-runGame(DESCRIPTION, generateRound);
+runGame(gameDescription, generateRound);
