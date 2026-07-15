@@ -1,3 +1,4 @@
+// src/games/gcd.js
 const gcd = (a, b) => {
   a = Math.abs(a);
   b = Math.abs(b);
@@ -18,10 +19,12 @@ const getRandomInt = (min, max) => {
 const generateRound = () => {
   const a = getRandomInt(1, 100);
   const b = getRandomInt(1, 100);
-  const correctAnswer = String(gcd(a, b));
+
+  
+  const expectedAnswer = String(gcd(a, b));
   const question = `${a} ${b}`;
 
-  return { question, answer: correctAnswer };
+  return { question, expectedAnswer };
 };
 
 export default generateRound;

@@ -1,3 +1,4 @@
+// src/games/prime.js
 const isPrime = (num) => {
   if (num <= 1) return false;
   if (num === 2) return true;
@@ -18,10 +19,12 @@ const getRandomInt = (min, max) => {
 
 const generateRound = () => {
   const number = getRandomInt(2, 100);
-  const correctAnswer = isPrime(number) ? 'yes' : 'no';
+
+ 
+  const expectedAnswer = isPrime(number) ? 'yes' : 'no';
   const question = String(number);
 
-  return { question, answer: correctAnswer };
+  return { question, expectedAnswer };
 };
 
 export default generateRound;

@@ -1,3 +1,4 @@
+// src/games/progression.js
 const getRandomInt = (min, max) => {
   const minCeiled = Math.ceil(min);
   const maxFloored = Math.floor(max);
@@ -21,12 +22,14 @@ const generateRound = () => {
 
   const progression = generateProgression(start, step, length);
   const hiddenIndex = getRandomInt(0, length - 1);
-  const correctAnswer = progression[hiddenIndex];
+
+  
+  const expectedAnswer = String(progression[hiddenIndex]);
 
   progression[hiddenIndex] = '..';
   const question = progression.join(' ');
 
-  return { question, answer: String(correctAnswer) };
+  return { question, expectedAnswer };
 };
 
 export default generateRound;

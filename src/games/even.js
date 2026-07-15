@@ -1,5 +1,4 @@
 // src/games/even.js
-
 const getRandomInt = (min, max) => {
   const minCeiled = Math.ceil(min);
   const maxFloored = Math.floor(max);
@@ -8,10 +7,12 @@ const getRandomInt = (min, max) => {
 
 const generateRound = () => {
   const number = getRandomInt(1, 100);
-  const correctAnswer = number % 2 === 0 ? 'yes' : 'no';
+ 
+  const expectedAnswer = number % 2 === 0 ? 'yes' : 'no';
   const question = String(number);
 
-  return { question, answer: correctAnswer };
+  
+  return { question, expectedAnswer };
 };
 
 export default generateRound;
